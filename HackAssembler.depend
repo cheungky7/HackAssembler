@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1576932327 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\parser.cpp
+	"parser.h"
+
+1576932306 c:\works\coursea\build_a_computer\hackassembler\hackassembler\parser.h
+	<fstream>
+	<iostream>
+	<string>
+
+1576932180 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
+	<stdio.h>
+	"parser.h"
+
