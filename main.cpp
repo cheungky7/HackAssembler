@@ -11,6 +11,6 @@ int main(int argc, char **argv){
     }
     //string fileName(argv[0]);
 
-    readfile(argv[1]);
+    scanfile(argv[1]);
     return 0;
 }
