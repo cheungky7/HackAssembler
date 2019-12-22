@@ -50,12 +50,25 @@ void scanfile(const char* filename) {
 		{
 			lineno++;
 			if(has_only_spaces(line)==true) {
-                continue; // skip whole line is space
+                continue; // skip if whole line is space
 			}
 
-			std::string instruction=removeCommentAndWhiteSpace(line);
+			std::string instructionStr=removeCommentAndWhiteSpace(line);
+			if(instructionStr.size()==0){
+                continue;// skip if whole line is comment
+			}
+            instruction Instr;
+            Instr.parse(instructionStr);
 
-            printf("%d,%s,length:%d\n", lineno, instruction.c_str(),instruction.size());
+            if(Instr.Type==instruction::A_COMMAND) {
+                printf("Symbol:%s\n",Instr.symbol.c_str());
+            }
+
+             if(Instr.Type==instruction::C_COMMAND) {
+                printf("comp:%s,dest:%s\n",Instr.comp.c_str(),Instr.dest.c_str());
+            }
+
+           // printf("%d,%s,length:%d\n", lineno, instruction.c_str(),instruction.size());
 		}
 		infile.close();
 	}

@@ -33,6 +33,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="instruction.cpp" />
+		<Unit filename="instruction.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="parser.cpp" />
 		<Unit filename="parser.h" />
