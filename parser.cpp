@@ -40,36 +40,4 @@ std::string removeCommentAndWhiteSpace(std::string& str){
 
 
 
-void scanfile(const char* filename) {
-	std::ifstream infile(filename);
-	if (infile.is_open())
-	{
-		int lineno = 0;
-		std::string line;
-		while (std::getline(infile, line))
-		{
-			lineno++;
-			if(has_only_spaces(line)==true) {
-                continue; // skip if whole line is space
-			}
 
-			std::string instructionStr=removeCommentAndWhiteSpace(line);
-			if(instructionStr.size()==0){
-                continue;// skip if whole line is comment
-			}
-            instruction Instr;
-            Instr.parse(instructionStr);
-
-            if(Instr.Type==instruction::A_COMMAND) {
-                printf("Symbol:%s\n",Instr.symbol.c_str());
-            }
-
-             if(Instr.Type==instruction::C_COMMAND) {
-                printf("comp:%s,dest:%s\n",Instr.comp.c_str(),Instr.dest.c_str());
-            }
-
-           // printf("%d,%s,length:%d\n", lineno, instruction.c_str(),instruction.size());
-		}
-		infile.close();
-	}
-}

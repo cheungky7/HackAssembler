@@ -28,6 +28,7 @@ instruction::instruction(){
                 this->dest=line.substr(0,comp_pos-1);
                 this->comp=line.substr(comp_pos+1,line.size()-(comp_pos+1));
            }
+
            if(jump_pos !=std::string::npos){
                 this->dest=line.substr(0,jump_pos-1);
                 this->jump=line.substr(jump_pos+1,line.size());

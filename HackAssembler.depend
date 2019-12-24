@@ -1,20 +1,29 @@
 # depslib dependency file v1.0
-1577002831 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\parser.cpp
+1577028023 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\parser.cpp
 	"parser.h"
 
-1576983083 c:\works\coursea\build_a_computer\hackassembler\hackassembler\parser.h
+1577027680 c:\works\coursea\build_a_computer\hackassembler\hackassembler\parser.h
 	<fstream>
 	<iostream>
 	<string>
 	"instruction.h"
 
-1576933560 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
+1577117882 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
 	<stdio.h>
 	"parser.h"
+	"binarycoder.h"
 
-1577002989 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.cpp
+1577006689 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.cpp
 	"instruction.h"
 
 1576977352 c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.h
 	<string>
+
+1577198849 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
+	"binarycoder.h"
+	<regex>
+
+1577117132 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
+	<string>
+	"instruction.h"
 
