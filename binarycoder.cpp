@@ -86,9 +86,51 @@ std::string binarycoder::compToBinary(std::string &mnemonic){
             binarycode="1010101";
 
        return binarycode;
+}
+
+std::string binarycoder::destToBinary(std::string &mnemonic){
+
+        std::string binarycode="";
+        if(mnemonic.compare("")==0)
+            binarycode="000";
+        if(mnemonic.compare("M")==0)
+            binarycode="001";
+        if(mnemonic.compare("D")==0)
+            binarycode="010";
+        if(mnemonic.compare("MD")==0)
+            binarycode="011";
+        if(mnemonic.compare("A")==0)
+            binarycode="100";
+        if(mnemonic.compare("AM")==0)
+            binarycode="101";
+        if(mnemonic.compare("AD")==0)
+            binarycode="110";
+        if(mnemonic.compare("AMD")==0)
+            binarycode="111";
+       return binarycode;
    }
 
+   std::string binarycoder::jumpToBinary(std::string &mnemonic){
 
+        std::string binarycode="";
+        if(mnemonic.compare("")==0)
+            binarycode="000";
+        if(mnemonic.compare("JGT")==0)
+            binarycode="001";
+        if(mnemonic.compare("JEQ")==0)
+            binarycode="010";
+        if(mnemonic.compare("JGE")==0)
+            binarycode="011";
+        if(mnemonic.compare("JLT")==0)
+            binarycode="100";
+        if(mnemonic.compare("JNE")==0)
+            binarycode="101";
+        if(mnemonic.compare("JLE")==0)
+            binarycode="110";
+        if(mnemonic.compare("JMP")==0)
+            binarycode="111";
+       return binarycode;
+   }
 
 
 std::string binarycoder::convert(instruction &instrInput,int  lineno){
@@ -99,8 +141,17 @@ std::string binarycoder::convert(instruction &instrInput,int  lineno){
         }
     }
 
-     if(instrInput.Type==instruction::L_COMMAND){
+     if(instrInput.Type==instruction::C_COMMAND){
+        std::string compInBinary=binarycoder::compToBinary(instrInput.comp);
+        std::string destInBinary=binarycoder::destToBinary(instrInput.dest);
+        std::string jumpInBinary=binarycoder::jumpToBinary(instrInput.jump);
+       // std::string C_COMMANDInBinary=compToBinary+destInBinary+jumpInBinary;
+       std::string C_COMMANDInBinary("111");
+       C_COMMANDInBinary.append(compInBinary);
+       C_COMMANDInBinary.append(destInBinary);
+       C_COMMANDInBinary.append(jumpInBinary);
 
+        return C_COMMANDInBinary;
      }
 
     return binarycodestr;

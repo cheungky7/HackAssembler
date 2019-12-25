@@ -19,11 +19,11 @@
 1576977352 c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.h
 	<string>
 
-1577201434 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
+1577276929 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
 	"binarycoder.h"
 	<regex>
 
-1577204088 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
+1577276230 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
 	<string>
 	"instruction.h"
 

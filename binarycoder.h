@@ -14,6 +14,8 @@ public:
     std::string convert(instruction &instrInput,int  lineno);
     static std::string SymbolToAInstr(std::string symbol);
     static std::string compToBinary(std::string &mnemonic);
+    static std::string destToBinary(std::string &mnemonic);
+    static std::string jumpToBinary(std::string &mnemonic);
 
 
 
