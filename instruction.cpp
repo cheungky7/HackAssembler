@@ -25,13 +25,13 @@ instruction::instruction(){
            std::size_t comp_pos =  line.find("=");
            std::size_t jump_pos =  line.find(";");
            if(comp_pos !=std::string::npos){
-                this->dest=line.substr(0,comp_pos-1);
+                this->dest=line.substr(0,comp_pos);
                 this->comp=line.substr(comp_pos+1,line.size()-(comp_pos+1));
            }
 
            if(jump_pos !=std::string::npos){
-                this->dest=line.substr(0,jump_pos-1);
-                this->jump=line.substr(jump_pos+1,line.size());
+                this->dest=line.substr(0,jump_pos);
+                this->jump=line.substr(jump_pos+1,line.size()-(comp_pos+1));
            }
         }
     }

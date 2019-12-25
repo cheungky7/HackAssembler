@@ -8,12 +8,12 @@
 	<string>
 	"instruction.h"
 
-1577117882 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
+1577280489 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
 	<stdio.h>
 	"parser.h"
 	"binarycoder.h"
 
-1577006689 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.cpp
+1577281449 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.cpp
 	"instruction.h"
 
 1576977352 c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.h

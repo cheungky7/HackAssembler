@@ -21,8 +21,15 @@ int main(int argc, char **argv){
 
 void scanfile(const char* filename) {
 	std::ifstream infile(filename);
+	ofstream hackfile;
+	std::string inputfilename(filename);
+	size_t found=inputfilename.find(".asm");
+	std::string outputfilename=inputfilename.substr(0,found)+".hack";
+
+	 //size_t found = filename.find(".asm");
 	if (infile.is_open())
 	{
+        hackfile.open(outputfilename.c_str());
 		int lineno = 0;
 		std::string line;
 		while (std::getline(infile, line))
@@ -40,8 +47,10 @@ void scanfile(const char* filename) {
             Instr.parse(instructionStr);
             std::string binarycodestr=binarycoder::getInstance()->convert(Instr,lineno);
             printf("%s\n",binarycodestr.c_str());
+            hackfile<<binarycodestr.c_str()<<"\n";
 
 		}
+		hackfile.close();
 		infile.close();
 	}
 }
