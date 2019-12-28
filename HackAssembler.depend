@@ -8,10 +8,11 @@
 	<string>
 	"instruction.h"
 
-1577280489 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
+1577547400 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
 	<stdio.h>
 	"parser.h"
 	"binarycoder.h"
+	"symboltable.h"
 
 1577281449 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.cpp
 	"instruction.h"
@@ -19,11 +20,19 @@
 1576977352 c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.h
 	<string>
 
-1577276929 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
+1577354770 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
 	"binarycoder.h"
 	<regex>
 
-1577276230 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
-	<string>
+1577549537 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
 	"instruction.h"
+	"symboltable.h"
+
+1577548906 c:\works\coursea\build_a_computer\hackassembler\hackassembler\symboltable.h
+	<map>
+	<string>
+	<stdexcept>
+
+1577549422 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\symboltable.cpp
+	"symboltable.h"
 
