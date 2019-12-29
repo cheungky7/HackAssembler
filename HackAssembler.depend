@@ -8,7 +8,7 @@
 	<string>
 	"instruction.h"
 
-1577547400 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
+1577594652 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\main.cpp
 	<stdio.h>
 	"parser.h"
 	"binarycoder.h"
@@ -24,7 +24,7 @@
 	"binarycoder.h"
 	<regex>
 
-1577549537 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
+1577635111 c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.h
 	"instruction.h"
 	"symboltable.h"
 

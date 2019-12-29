@@ -149,11 +149,18 @@ void binarycoder::addtTosymbolTable(instruction &instrInput,int  currentMEMAddr)
 
 }
 
-std::string binarycoder::convert(instruction &instrInput,int  currentMEMAddr){
+std::string binarycoder::convert(instruction &instrInput,int  lineno){
     std::string binarycodestr="";
     if(instrInput.Type==instruction::A_COMMAND){
         if(isNumeric(instrInput.symbol) == true){
             return binarycoder::SymbolToAInstr(instrInput.symbol);
+        }else{
+            try{
+                int symbolValue=m_SymbolTable->get(instrInput.symbol);
+                return binarycoder::SymbolToAInstr(std::to_string(symbolValue));
+            }catch(std::exception &e){
+                printf("%s at line %d",e.what(),lineno);
+            }
         }
     }
 

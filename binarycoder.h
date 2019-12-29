@@ -19,7 +19,7 @@ public:
     binarycoder();
     void setSymbolTable(symboltable *SymbolTable);
     static binarycoder *getInstance();
-    std::string convert(instruction &instrInput,int  currentMEMAddr);
+    std::string convert(instruction &instrInput,int  lineno);
     static std::string SymbolToAInstr(std::string symbol);
     static std::string compToBinary(std::string &mnemonic);
     static std::string destToBinary(std::string &mnemonic);
