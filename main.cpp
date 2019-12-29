@@ -33,6 +33,7 @@ void scanfileforsymbol(const char* filename,symboltable* symbolTable) {
 	if (infile.is_open())
 	{
 		int lineno = 0;
+		int MEMline=0;
 		std::string line;
 		while (std::getline(infile, line))
 		{
@@ -45,11 +46,11 @@ void scanfileforsymbol(const char* filename,symboltable* symbolTable) {
 			if(instructionStr.size()==0){
                 continue;// skip if whole line is comment
 			}
-            //instruction Instr;
-            //Instr.parse(instructionStr);
-            //std::string binarycodestr=binarycoder::getInstance()->convert(Instr,lineno);
-            //printf("%s\n",binarycodestr.c_str());
 
+            instruction Instr;
+            Instr.parse(instructionStr);
+            binarycoder::getInstance()->addtTosymbolTable(Instr,MEMline);
+            MEMline++;
 
 		}
 		infile.close();

@@ -140,6 +140,13 @@ void binarycoder::addtTosymbolTable(instruction &instrInput,int  currentMEMAddr)
         }
     }
 
+     if(instrInput.Type==instruction::L_COMMAND){
+        //if(isNumeric(instrInput.symbol) != true){
+           // m_SymbolTable->addVar(instrInput.symbol);
+        //}
+        m_SymbolTable->addLabel(instrInput.symbol,currentMEMAddr+1);
+    }
+
 }
 
 std::string binarycoder::convert(instruction &instrInput,int  currentMEMAddr){
