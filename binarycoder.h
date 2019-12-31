@@ -16,7 +16,7 @@ private:
     symboltable *m_SymbolTable;
 
 public:
-    binarycoder();
+  //  binarycoder();
     void setSymbolTable(symboltable *SymbolTable);
     static binarycoder *getInstance();
     std::string convert(instruction &instrInput,int  lineno);

@@ -10,6 +10,7 @@ symboltable::symboltable(){
     m_table->insert( std::pair<std::string,int>("THAT",0x04));
     m_table->insert( std::pair<std::string,int>("SCREEN",0x4000));
     m_table->insert( std::pair<std::string,int>("KBD",0x6000));
+
     for(int i=0;i<16;i++){
         char temp[8];
         sprintf(temp,"R%d",i);

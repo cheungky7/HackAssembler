@@ -9,7 +9,7 @@ bool binarycoder::isNumeric(std::string token){
 
 
 binarycoder *binarycoder::getInstance(){
-     if (instance !=nullptr) {
+     if (instance ==nullptr) {
        instance = new binarycoder();
      }
       return instance;
@@ -188,8 +188,8 @@ std::string binarycoder::convert(instruction &instrInput,int  lineno){
 void binarycoder::setSymbolTable(symboltable *SymbolTable){
     m_SymbolTable=SymbolTable;
 }
-
+/*
 binarycoder::binarycoder(){
     m_SymbolTable=nullptr;
 
-}
+}*/
