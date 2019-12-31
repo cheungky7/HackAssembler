@@ -7,7 +7,7 @@ using namespace std;
 
 binarycoder *binarycoder::instance = nullptr;
 void scanfile(const char* filename);
-void scanfileforsymbol(const char* filename,symboltable* symbolTable);
+void scanfileforsymbol(const char* filename);
 
 int main(int argc, char **argv){
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv){
     symboltable *g_sysmboltable=new symboltable();
     binarycoder::getInstance()->setSymbolTable(g_sysmboltable);
 
-
+    scanfileforsymbol(argv[1]);
     scanfile(argv[1]);
     if(g_sysmboltable !=nullptr){
         delete g_sysmboltable;
@@ -27,7 +27,7 @@ int main(int argc, char **argv){
     return 0;
 }
 
-void scanfileforsymbol(const char* filename,symboltable* symbolTable) {
+void scanfileforsymbol(const char* filename) {
 	std::ifstream infile(filename);
 	 //size_t found = filename.find(".asm");
 	if (infile.is_open())

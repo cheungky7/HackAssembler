@@ -35,6 +35,7 @@ void symboltable::addVar(std::string symbol){
         int varAddr=this->numOfVarAssigned+VAR_STAR_ADDR;
         m_table->insert( std::pair<std::string,int>(symbol,varAddr));
         this->numOfVarAssigned++;
+        printf("add %s value%d",symbol.c_str(),varAddr);
     }
 }
 
@@ -43,6 +44,7 @@ void symboltable::addLabel(std::string symbol,int value){
         //int varAddr=this->numOfVarAssigned+VAR_STAR_ADDR;
         m_table->insert( std::pair<std::string,int>(symbol,value));
         //this->numOfVarAssigned++;
+        printf("Insert %s value%d",symbol.c_str(),value);
     }
 }
 
