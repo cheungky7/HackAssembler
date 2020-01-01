@@ -20,7 +20,7 @@
 1576977352 c:\works\coursea\build_a_computer\hackassembler\hackassembler\instruction.h
 	<string>
 
-1577887187 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
+1577887300 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\binarycoder.cpp
 	"binarycoder.h"
 	<regex>
 
@@ -33,6 +33,6 @@
 	<string>
 	<stdexcept>
 
-1577872518 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\symboltable.cpp
+1577888527 source:c:\works\coursea\build_a_computer\hackassembler\hackassembler\symboltable.cpp
 	"symboltable.h"
 

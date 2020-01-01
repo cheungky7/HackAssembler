@@ -44,12 +44,17 @@ void symboltable::addVar(std::string symbol){
 }
 
 void symboltable::addLabel(std::string symbol,int value){
-  //  if(m_table->find(symbol) ==m_table->end()){
+    std::map<std::string,int>::iterator it=m_table->find(symbol);
+    if(it ==m_table->end()){
         //int varAddr=this->numOfVarAssigned+VAR_STAR_ADDR;
         m_table->insert( std::pair<std::string,int>(symbol,value));
         //this->numOfVarAssigned++;
         printf("Insert %s value %d\n",symbol.c_str(),value);
-   // }
+    } else {
+        //m_table[symbol]=value;
+        it->second=value;
+        printf("Replace %s value %d\n",symbol.c_str(),value);
+    }
 }
 
 int symboltable::get(std::string symbol){
