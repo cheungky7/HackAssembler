@@ -85,6 +85,10 @@ void scanfile(const char* filename) {
             instruction Instr;
             Instr.parse(instructionStr);
             std::string binarycodestr=binarycoder::getInstance()->convert(Instr,lineno);
+            if(binarycodestr==""){
+                continue;
+            }
+
             printf("%s\n",binarycodestr.c_str());
             hackfile<<binarycodestr.c_str()<<"\n";
 

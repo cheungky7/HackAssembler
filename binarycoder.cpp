@@ -26,7 +26,7 @@ std::string binarycoder::SymbolToAInstr(std::string symbol){
 
 std::string binarycoder::compToBinary(std::string &mnemonic){
 
-   std::string binarycode="";
+   std::string binarycode="0000000";
 
         if(mnemonic.compare("0")==0)
             binarycode="0101010";
@@ -90,7 +90,7 @@ std::string binarycoder::compToBinary(std::string &mnemonic){
 
 std::string binarycoder::destToBinary(std::string &mnemonic){
 
-        std::string binarycode="";
+        std::string binarycode="000";
         if(mnemonic.compare("")==0)
             binarycode="000";
         if(mnemonic.compare("M")==0)
@@ -112,7 +112,7 @@ std::string binarycoder::destToBinary(std::string &mnemonic){
 
    std::string binarycoder::jumpToBinary(std::string &mnemonic){
 
-        std::string binarycode="";
+        std::string binarycode="000";
         if(mnemonic.compare("")==0)
             binarycode="000";
         if(mnemonic.compare("JGT")==0)
