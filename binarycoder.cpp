@@ -69,9 +69,9 @@ std::string binarycoder::compToBinary(std::string &mnemonic){
         if(mnemonic.compare("D+M")==0)
             binarycode="1000010";
         if(mnemonic.compare("D-A")==0)
-            binarycode="0100011";
+            binarycode="0010011";
         if(mnemonic.compare("D-M")==0)
-            binarycode="1100011";
+            binarycode="1010011";
         if(mnemonic.compare("A-D")==0)
             binarycode="0000111";
         if(mnemonic.compare("M-D")==0)
