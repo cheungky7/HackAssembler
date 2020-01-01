@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 
-#define VAR_STAR_ADDR 0x16
+#define VAR_STAR_ADDR 0x10
 
 
 
