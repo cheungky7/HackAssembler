@@ -50,7 +50,7 @@ void scanfileforsymbol(const char* filename) {
             instruction Instr;
             Instr.parse(instructionStr);
             binarycoder::getInstance()->addtTosymbolTable(Instr,MEMline);
-            MEMline++;
+          //  MEMline++;
 
 		}
 		infile.close();

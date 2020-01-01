@@ -24,7 +24,7 @@ public:
     static std::string compToBinary(std::string &mnemonic);
     static std::string destToBinary(std::string &mnemonic);
     static std::string jumpToBinary(std::string &mnemonic);
-    void addtTosymbolTable(instruction &instrInput,int  currentMEMAddr);
+    void addtTosymbolTable(instruction &instrInput,int  &currentMEMAddr);
 
 
 
