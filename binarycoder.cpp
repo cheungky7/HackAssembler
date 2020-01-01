@@ -132,13 +132,7 @@ std::string binarycoder::destToBinary(std::string &mnemonic){
        return binarycode;
    }
 
-void binarycoder::addtTosymbolTable(instruction &instrInput,int  &NextMEMAddr) {
-     std::string binarycodestr="";
-      if(instrInput.Type==instruction::A_COMMAND){
-        if(isNumeric(instrInput.symbol) != true){
-            m_SymbolTable->addVar(instrInput.symbol);
-        }
-    }
+void binarycoder::addLabelTosymbolTable(instruction &instrInput,int  &NextMEMAddr) {
 
      if(instrInput.Type==instruction::L_COMMAND){
        // int NextMEMAddr=currentMEMAddr+1;
@@ -147,6 +141,15 @@ void binarycoder::addtTosymbolTable(instruction &instrInput,int  &NextMEMAddr) {
         NextMEMAddr++;
     }
 
+}
+
+void binarycoder::addVarTosymbolTable(instruction &instrInput) {
+     std::string binarycodestr="";
+      if(instrInput.Type==instruction::A_COMMAND){
+        if(isNumeric(instrInput.symbol) != true){
+            m_SymbolTable->addVar(instrInput.symbol);
+        }
+    }
 }
 
 std::string binarycoder::convert(instruction &instrInput,int  lineno){
@@ -188,8 +191,8 @@ std::string binarycoder::convert(instruction &instrInput,int  lineno){
 void binarycoder::setSymbolTable(symboltable *SymbolTable){
     m_SymbolTable=SymbolTable;
 }
-/*
+
 binarycoder::binarycoder(){
     m_SymbolTable=nullptr;
 
-}*/
+}

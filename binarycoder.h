@@ -16,7 +16,7 @@ private:
     symboltable *m_SymbolTable;
 
 public:
-  //  binarycoder();
+    binarycoder();
     void setSymbolTable(symboltable *SymbolTable);
     static binarycoder *getInstance();
     std::string convert(instruction &instrInput,int  lineno);
@@ -24,7 +24,9 @@ public:
     static std::string compToBinary(std::string &mnemonic);
     static std::string destToBinary(std::string &mnemonic);
     static std::string jumpToBinary(std::string &mnemonic);
-    void addtTosymbolTable(instruction &instrInput,int  &currentMEMAddr);
+    //void addtTosymbolTable(instruction &instrInput,int  &currentMEMAddr);
+    void addLabelTosymbolTable(instruction &instrInput,int  &NextMEMAddr);
+    void addVarTosymbolTable(instruction &instrInput);
 
 
 

@@ -7,7 +7,8 @@ using namespace std;
 
 binarycoder *binarycoder::instance = nullptr;
 void scanfile(const char* filename);
-void scanfileforsymbol(const char* filename);
+void scanfileforlabel(const char* filename);
+void scanfileforvar(const char* filename);
 
 int main(int argc, char **argv){
 
@@ -18,7 +19,8 @@ int main(int argc, char **argv){
     symboltable *g_sysmboltable=new symboltable();
     binarycoder::getInstance()->setSymbolTable(g_sysmboltable);
 
-    scanfileforsymbol(argv[1]);
+    scanfileforlabel(argv[1]);
+    scanfileforvar(argv[1]);
     scanfile(argv[1]);
     if(g_sysmboltable !=nullptr){
         delete g_sysmboltable;
@@ -27,7 +29,7 @@ int main(int argc, char **argv){
     return 0;
 }
 
-void scanfileforsymbol(const char* filename) {
+void scanfileforlabel(const char* filename) {
 	std::ifstream infile(filename);
 	 //size_t found = filename.find(".asm");
 	if (infile.is_open())
@@ -49,9 +51,37 @@ void scanfileforsymbol(const char* filename) {
 
             instruction Instr;
             Instr.parse(instructionStr);
-            binarycoder::getInstance()->addtTosymbolTable(Instr,MEMline);
+            binarycoder::getInstance()->addLabelTosymbolTable(Instr,MEMline);
           //  MEMline++;
 
+		}
+		infile.close();
+	}
+}
+
+void scanfileforvar(const char* filename) {
+	std::ifstream infile(filename);
+	 //size_t found = filename.find(".asm");
+	if (infile.is_open())
+	{
+		int lineno = 0;
+//		int MEMline=0;
+		std::string line;
+		while (std::getline(infile, line))
+		{
+			lineno++;
+			if(has_only_spaces(line)==true) {
+                continue; // skip if whole line is space
+			}
+
+			std::string instructionStr=removeCommentAndWhiteSpace(line);
+			if(instructionStr.size()==0){
+                continue;// skip if whole line is comment
+			}
+
+            instruction Instr;
+            Instr.parse(instructionStr);
+            binarycoder::getInstance()->addVarTosymbolTable(Instr);
 		}
 		infile.close();
 	}
