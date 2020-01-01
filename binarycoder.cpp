@@ -45,7 +45,7 @@ std::string binarycoder::compToBinary(std::string &mnemonic){
         if(mnemonic.compare("!A")==0)
             binarycode="0110001";
         if(mnemonic.compare("!M")==0)
-            binarycode="0110001";
+            binarycode="1110001";
         if(mnemonic.compare("-D")==0)
             binarycode="0001111";
         if(mnemonic.compare("-A")==0)
